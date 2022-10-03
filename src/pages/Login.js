@@ -9,7 +9,7 @@ class Login extends React.Component {
     this.state = {
       login: '',
       button: true,
-      isLoading: true,
+      isLoading: false,
     };
   }
 
@@ -27,12 +27,11 @@ class Login extends React.Component {
     });
   };
 
-  saveButton = async () => {
+  saveButton = () => {
     const { login } = this.state;
-    const recebe = await createUser();
+    createUser({ name: { login } });
     this.setState({
-      [recebe.name]: login,
-      isLoading: false,
+      isLoading: true,
     });
   };
 
@@ -44,6 +43,7 @@ class Login extends React.Component {
     return (
       <div data-testid="page-login">
         <label htmlFor="login">
+          Login:
           <input
             data-testid="login-name-input"
             id="login"
