@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Header from '../Header';
 import getMusics from '../services/musicsAPI';
-// import MusicCard from './MusicCard';
+import MusicCard from './MusicCard';
 import Loading from './Loading';
 
 class Album extends React.Component {
@@ -11,15 +11,12 @@ class Album extends React.Component {
 
     this.state = {
       lista: [],
-      isLoading: false,
+      isLoading: true,
       album: {},
     };
   }
 
   async componentDidMount() {
-    this.setState({
-      isLoading: true,
-    });
     const { match: { params: { id } } } = this.props;
     const recebe = await getMusics(id);
     this.setState({
@@ -48,15 +45,13 @@ class Album extends React.Component {
             </div>
           )}
           { lista.map((song) => (
-            <div key={ song.trackId }>
-              <p>{ song.trackName }</p>
-              <audio data-testid="audio-component" src={ song.previewUrl } controls>
-                <track kind="captions" />
-                O seu navegador não suporta o elemento
-                {' '}
-                <code>audio</code>
-              </audio>
-            </div>
+            <MusicCard
+              key={ song.trackId }
+              trackName={ song.trackName }
+              previewUrl={ song.previewUrl }
+              trackId={ song.trackId }
+              song={ song }
+            />
           ))}
         </div>
       </section>
