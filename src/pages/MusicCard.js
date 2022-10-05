@@ -8,13 +8,17 @@ class MusicCard extends React.Component {
     super();
 
     this.state = {
-      isLoading: false,
       box: false,
+      isLoading: false,
     };
   }
 
-  componentDidMount() {
-    this.getFavorites();
+  async componentDidMount() {
+    const { trackId } = this.props;
+    const recebe = await getFavoriteSongs();
+    recebe.some((save) => save.trackId === trackId && this.setState({
+      box: save,
+    }));
   }
 
   onInputChange = async ({ target }) => {
@@ -27,14 +31,6 @@ class MusicCard extends React.Component {
     this.setState({
       isLoading: false,
     });
-  };
-
-  getFavorites = async () => {
-    const { trackId } = this.props;
-    const recebe = await getFavoriteSongs();
-    recebe.some((save) => save.trackId === trackId && this.setState({
-      box: save,
-    }));
   };
 
   render() {
@@ -52,8 +48,9 @@ class MusicCard extends React.Component {
           {' '}
           <code>audio</code>
         </audio>
-        <label htmlFor="checkbox" data-testid={ `checkbox-music-${trackId}` }>
+        <label htmlFor="checkbox">
           <input
+            data-testid={ `checkbox-music-${trackId}` }
             id="checkbox"
             type="checkbox"
             name="box"
