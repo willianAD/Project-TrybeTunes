@@ -68,12 +68,6 @@ class MusicCard extends React.Component {
   }
 }
 
-// export const removeSong = (song) => new Promise((resolve) => {
-//   const favoriteSongs = readFavoriteSongs();
-//   saveFavoriteSongs(favoriteSongs.filter((s) => s.trackId !== song.trackId));
-//   simulateRequest(SUCCESS_STATUS)(resolve);
-// });
-
 MusicCard.propTypes = {
   trackName: PropTypes.string.isRequired,
   previewUrl: PropTypes.string.isRequired,
