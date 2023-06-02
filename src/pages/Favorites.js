@@ -1,9 +1,11 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import Header from '../Header';
 import Loading from './Loading';
 import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 import MusicCard from './MusicCard';
+import fundo from '../images/fundo.svg';
+import fundo1 from '../images/fundo1.svg';
+import '../styles/favorites.css';
 
 class Favorites extends React.Component {
   constructor() {
@@ -11,44 +13,45 @@ class Favorites extends React.Component {
 
     this.state = {
       isLoading: true,
+      favorite: [],
     };
   }
 
   async componentDidMount() {
-    const recebe = await getFavoriteSongs();
-    console.log(recebe);
+    const favoriteSongs = await getFavoriteSongs();
     this.setState({
       isLoading: false,
-      [recebe]: recebe,
+      favorite: favoriteSongs,
     });
   }
 
   render() {
-    // const { trackName, previewUrl, trackId } = this.props;
-    const { isLoading, recebe } = this.state;
+    const { isLoading, favorite } = this.state;
     if (isLoading) {
       return <Loading />;
     }
     return (
       <section>
-        <div data-testid="page-favorites">
+        <div data-testid="page-favorites" className="div-favorites">
           <Header />
+          <img src={ fundo } alt="fundo" className="img-top-pages" />
+          <img src={ fundo1 } alt="fundo" className="img-botton-pages" />
+          <p className="title-favorites">Músicas Favoritas</p>
+          <div className="list-favorites">
+            { favorite.map((song) => (
+              <MusicCard
+                key={ song.trackId }
+                trackName={ song.trackName }
+                previewUrl={ song.previewUrl }
+                trackId={ song.trackId }
+                song={ song }
+              />
+            ))}
+          </div>
         </div>
-        { recebe.map((song) => (
-          <MusicCard
-            key={ song.trackId }
-          />
-        ))}
       </section>
     );
   }
 }
-
-// Favorites.propTypes = {
-//   trackName: PropTypes.string.isRequired,
-//   previewUrl: PropTypes.string.isRequired,
-//   trackId: PropTypes.number.isRequired,
-//   song: PropTypes.shape({}).isRequired,
-// };
 
 export default Favorites;

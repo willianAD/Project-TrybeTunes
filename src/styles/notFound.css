@@ -1,0 +1,18 @@
+.not-found {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 10%;
+}
+
+span {
+  font-size: 1000%;
+  color: blue;
+}
+
+.text-not-found {
+  font-size: 140%;
+  color: aqua;
+}

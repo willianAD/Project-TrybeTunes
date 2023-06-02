@@ -1,0 +1,64 @@
+* {
+  background-color: rgb(0, 128, 255);
+}
+
+.input-login {
+  background-color: white;
+  border-radius: 15px;
+  width: 99%;
+  height: 30px;
+  text-align: center;
+}
+
+.label-login {
+  background-color: white;
+  width: 50%;
+  padding: 15px;
+}
+
+.button-login {
+  background-color: blue;
+  color: white;
+  border-radius: 15px;
+  width: 50%;
+  height: 35px;
+  border: 3px solid;
+}
+
+.button-login:hover {
+  animation: pulsate 2s ease-in-out;
+}
+
+@keyframes pulsate {
+  0%{
+    box-shadow:
+    0 0 25px rgb(0, 234, 255),
+    0 0 50px rgba(253, 26, 26, 0.705);
+  }
+}
+
+.div-login {
+  margin-left: 23%;
+  margin-right: 23%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 90px;
+  background-color: white;
+  border-radius: 15px;
+}
+
+.img-top {
+  padding: 15px;
+  margin-left: 5%;
+}
+
+.img-trybetunes {
+  background-color: white;
+  padding: 70px;
+}
+
+.img-botton {
+  padding: 15px;
+  margin-left: 80%;
+}

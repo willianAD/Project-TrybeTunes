@@ -2,6 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { createUser } from '../services/userAPI';
 import Loading from './Loading';
+import trybetunes from '../images/logo.svg';
+import fundo from '../images/fundo.svg';
+import fundo1 from '../images/fundo1.svg';
+import '../styles/login.css';
 
 class Login extends React.Component {
   constructor() {
@@ -41,41 +45,38 @@ class Login extends React.Component {
       return <Loading />;
     }
     return (
-      <div data-testid="page-login">
-        <label htmlFor="login">
-          <input
-            data-testid="login-name-input"
-            id="login"
-            name="login"
-            type="text"
-            value={ login }
-            onChange={ this.onInputChange }
-          />
-        </label>
-        <button
-          data-testid="login-submit-button"
-          name="button"
-          type="button"
-          disabled={ button }
-          onClick={ this.saveButton }
-        >
-          Entrar
-        </button>
-      </div>
+      <>
+        <img src={ fundo } alt="fundo" className="img-top" />
+        <div data-testid="page-login" className="div-login">
+          <img src={ trybetunes } alt="TrybeTunes" className="img-trybetunes" />
+          <label htmlFor="login" className="label-login">
+            <input
+              data-testid="login-name-input"
+              className="input-login"
+              id="login"
+              name="login"
+              type="text"
+              placeholder="Qual é seu nome?"
+              value={ login }
+              onChange={ this.onInputChange }
+            />
+          </label>
+          <button
+            data-testid="login-submit-button"
+            className="button-login"
+            name="button"
+            type="button"
+            disabled={ button }
+            onClick={ this.saveButton }
+          >
+            Entrar
+          </button>
+        </div>
+        <img src={ fundo1 } alt="fundo" className="img-botton" />
+      </>
     );
   }
 }
-
-// export const createUser = (user) => new Promise((resolve) => {
-//   const emptyUser = {
-//     name: '',
-//     email: '',
-//     image: '',
-//     description: '',
-//   };
-//   saveUser({ ...emptyUser, ...user });
-//   simulateRequest(SUCCESS_STATUS)(resolve);
-// });
 
 Login.propTypes = {
   history: PropTypes.shape({

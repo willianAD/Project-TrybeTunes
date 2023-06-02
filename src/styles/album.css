@@ -1,0 +1,53 @@
+.img-top-album {
+  width: 17%;
+  height: 18%;
+  margin-top: 1%;
+  position: absolute;
+  z-index: 1;
+}
+
+.img-botton-album {
+  margin-top: 5%;
+  margin-left: 65%;
+  width: 10%;
+  height: 250px;
+  position: absolute;
+  z-index: 1;
+}
+
+.album {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.title-album {
+  width: 40%;
+  height: 15%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 3%;
+  margin-left: 20%;
+  position: absolute;
+  z-index: 1;
+  font-size: 25px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.title-individual-album {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.album-list {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 15%;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 25%;
+  margin-top: 35%;
+  border-radius: 10px;
+}

@@ -15,8 +15,8 @@ class MusicCard extends React.Component {
 
   async componentDidMount() {
     const { trackId } = this.props;
-    const recebe = await getFavoriteSongs();
-    recebe.some((save) => save.trackId === trackId && this.setState({
+    const favoriteSong = await getFavoriteSongs();
+    await favoriteSong.some((save) => save.trackId === trackId && this.setState({
       box: save,
     }));
   }
@@ -44,20 +44,21 @@ class MusicCard extends React.Component {
       return <Loading />;
     }
     return (
-      <div>
-        <p>{ trackName }</p>
-        <audio data-testid="audio-component" src={ previewUrl } controls>
+      <div className="music-card">
+        { trackName }
+        <audio data-testid="audio-component" src={ previewUrl } className="back" controls>
           <track kind="captions" />
           O seu navegador não suporta o elemento
           {' '}
-          <code>audio</code>
+          <code className="back">audio</code>
         </audio>
-        <label htmlFor={ trackId }>
+        <label htmlFor={ trackId } className="back">
           <input
             data-testid={ `checkbox-music-${trackId}` }
             id={ trackId }
             type="checkbox"
             name="box"
+            className="back"
             checked={ box }
             onChange={ this.onInputChange }
           />
