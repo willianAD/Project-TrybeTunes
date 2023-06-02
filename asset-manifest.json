@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/Project-TrybeTunes/static/css/main.b38b1bda.css",
+    "main.js": "/Project-TrybeTunes/static/js/main.c95d86cd.js",
+    "static/media/logo.svg": "/Project-TrybeTunes/static/media/logo.c7c912c14bac76b71308c81ddedeafae.svg",
+    "static/media/pesquisa.png": "/Project-TrybeTunes/static/media/pesquisa.41d42f0563e16212544e.png",
+    "static/media/fundo1.svg": "/Project-TrybeTunes/static/media/fundo1.8131aae88d805d233bead0cac920a54c.svg",
+    "static/media/fundo.svg": "/Project-TrybeTunes/static/media/fundo.12c1d3a8452cf025f7aaa41ce83b6cdd.svg",
+    "index.html": "/Project-TrybeTunes/index.html",
+    "main.b38b1bda.css.map": "/Project-TrybeTunes/static/css/main.b38b1bda.css.map",
+    "main.c95d86cd.js.map": "/Project-TrybeTunes/static/js/main.c95d86cd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b38b1bda.css",
+    "static/js/main.c95d86cd.js"
+  ]
+}
