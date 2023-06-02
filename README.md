@@ -1,4 +1,4 @@
-# Tryunfo em React
+# TrybeTunes em React
 
 Qual é o seu estilo musical favorito? Nesse projeto eu criei uma aplicação para pesquisar e listar álbuns e músicas de várias bandas e artistas. Será possível até mesmo ouvir o preview de cada música. Além disso, você também poderá favoritar suas músicas preferidas. Tudo isso será dividido em várias rotas, cada uma responsável por uma parte da funcionalidade.
 Conceito fundamental de React que permite que aplicações sejam dinâmicas e responsivas: estado de um componente. Além disso, gerenciar o estado e integrá-lo com capturas de eventos e formulários.
