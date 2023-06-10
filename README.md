@@ -19,6 +19,10 @@ O uso de estados de componentes em React, assim como captura de eventos e formul
 
 ## Como usar
 
+Poderá ser acessado através deste link [clique aqui](https://willianad.github.io/Project-TrybeTunes/).
+
+ou
+
 1. Clone este repositório:
 
 HTTPS:
